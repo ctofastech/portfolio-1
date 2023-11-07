@@ -6,9 +6,11 @@
 // method 3:
 function Footer() {
     return(
-        <>
-            <h1>Footer</h1>
-        </>
+        <div className={"bg-dark p-4 text-white"}>
+            <p className="text-center">
+                copyright @{new Date().getFullYear()} by <a className={"text-white"} target={"_blank"} href="https://www.iba-suk.edu.pk" rel="noreferrer">Sukkur IBA University</a>
+            </p>
+        </div>
     )
 }
 

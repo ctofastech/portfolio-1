@@ -10,32 +10,23 @@ import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 import {BuyerReview, SellerReview} from "./components/Reviews";
 import Contact from "./components/Contact";
+import {Route, Routes} from "react-router-dom";
+import {WelcomePage} from "./components/WelcomePage";
+import AllProjects from "./components/AllProjects";
+import Experiments from "./components/Experiments";
+
 function App() {
-  return (
-    <div>
-      <Header />
-        <HeroSection />
-        <Projects />
-        <Tabs
-            defaultActiveKey="profile"
-            id="uncontrolled-tab-example"
-            className="mb-3"
-        >
-            <Tab eventKey="home" title="Buyer Review">
-                <BuyerReview />
-            </Tab>
-            <Tab eventKey="profile" title="Seller Review">
-                <SellerReview />
-            </Tab>
-
-        </Tabs>
-
-
-        <Contact />
-        <Footer />
-
-    </div>
-  );
+    return (
+        <div>
+            <Header/>
+                <Routes>
+                    <Route path={"/"} element={<WelcomePage />}></Route>
+                    <Route path={"/all-projects"} element={<AllProjects />}></Route>
+                    <Route path={"/experiment"} element={<Experiments />}></Route>
+                </Routes>
+            <Footer/>
+        </div>
+    );
 }
 
 export default App;
